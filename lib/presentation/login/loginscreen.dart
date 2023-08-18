@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:x_z_memory/presentation/login/auth_button.dart";
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class LoginScreen extends StatelessWidget {
       body: Container(
         child: Column(
           children: <Widget>[
-            Padding(padding: EdgeInsets.all(40.0), child: _LoginForm),
+            Padding(padding: EdgeInsets.all(40.0), child: _LoginForm()),
             // PrivacySettingsButton()
           ],
         ),
@@ -54,6 +55,10 @@ class _LoginFormState extends State<_LoginForm> {
         return null;
       },
     );
+
+    final submitCallback = () {};
+    final sumbitButton =
+        AuthButton(buttonText: "Login", onPressedCallback: submitCallback);
 
     final _passwordTextField = TextFormField(
         decoration: const InputDecoration(labelText: 'pwd'),
